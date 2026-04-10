@@ -1,9 +1,3 @@
-def normalize(data):
-    """Convert Firebase dict → list safely"""
-    if isinstance(data, dict):
-        return list(data.values())
-    return data or []
-
 """Flask application for the online quiz system (Firebase FIXED)."""
 from __future__ import annotations
 
@@ -31,6 +25,11 @@ from services import (
     get_list,
 )
 
+def normalize(data):
+    """Convert Firebase dict → list safely"""
+    if isinstance(data, dict):
+        return list(data.values())
+    return data or []
 # -----------------------------
 # INIT
 # -----------------------------
